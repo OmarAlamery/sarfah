@@ -11,8 +11,7 @@ class DontHaveAnAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Don't have an account?",
-            style: FontHelper.font13WhiteW300),
+        Text("Don't have an account?", style: FontHelper.font13WhiteW300),
         TextButton(
           child: Text("Sign Up"),
           onPressed: () {},

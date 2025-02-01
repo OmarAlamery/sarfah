@@ -12,7 +12,9 @@ class MyTextFormField extends StatelessWidget {
       {super.key,
       required this.hintText,
       this.suffixIcon,
-      required this.isObsecure, required this.controller, this.validator});
+      required this.isObsecure,
+      required this.controller,
+      this.validator});
 
   @override
   Widget build(BuildContext context) {

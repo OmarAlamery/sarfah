@@ -14,7 +14,8 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LoginLoadingState());
     try {
       await firebaseHelper
-          .loginUser(emailController.text.trim(), passwordController.text.trim())
+          .loginUser(
+              emailController.text.trim(), passwordController.text.trim())
           .then((value) => emit(LoginSeccessState()));
     } catch (e) {
       emit(LoginErrorState());
