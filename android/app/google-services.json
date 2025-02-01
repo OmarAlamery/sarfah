@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566216523636",
+    "project_id": "sarfah-a81bd",
+    "storage_bucket": "sarfah-a81bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566216523636:android:402070f076dda83e1b7621",
+        "android_client_info": {
+          "package_name": "com.example.sarfah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM9PB057W5dU42Y76WBmHdjc8AxAdqrdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
