@@ -13,8 +13,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
-    const TransactionsScreen(),
-    const Home(),
+    Home(),
+    TransactionsScreen(),
   ];
   @override
   Widget build(BuildContext context) {

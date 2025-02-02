@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarfah/features/home/widgets/add_transaction_screen.dart';
 import 'package:sarfah/features/home/widgets/balance_widget.dart';
 import 'package:sarfah/features/home/widgets/expense_tile_widget.dart';
 import 'package:sarfah/features/home/widgets/my_app_bar.dart';
@@ -35,12 +36,24 @@ class Home extends StatelessWidget {
               verticalSpace(20),
               const PercentsWidget(),
               verticalSpace(20),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Latest Transactions",
-                  style: FontHelper.font18BoldWhite,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Transactions",
+                    style: FontHelper.font18BoldWhite,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AddTransaction()));
+                    },
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  )
+                ],
               ),
               verticalSpace(20),
               SizedBox(

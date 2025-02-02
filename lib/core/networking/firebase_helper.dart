@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseHelper {
   FirebaseAuth auth = FirebaseAuth.instance;
+
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   Future loginUser(String email, String password) async {
     await auth.signInWithEmailAndPassword(email: email, password: password);
   }
@@ -16,5 +19,22 @@ class FirebaseHelper {
 
   User? getCurrentUser() {
     return auth.currentUser;
+  }
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    await auth.sendPasswordResetEmail(email: email);
+  }
+
+  Future<void> addTransaction(
+      String userId, String name, String price, String date) async {
+    try {
+      await firestore
+          .collection('transactions')
+          .doc(userId)
+          .collection('transactions')
+          .add({'name': name, 'price': price, 'date': date});
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
