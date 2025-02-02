@@ -126,6 +126,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       priceController.text,
                       dateController.text);
                 }
+                Navigator.pop(context);
               },
               child: Text(
                 "Save",

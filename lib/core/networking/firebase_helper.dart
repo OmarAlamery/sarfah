@@ -32,9 +32,23 @@ class FirebaseHelper {
           .collection('transactions')
           .doc(userId)
           .collection('transactions')
-          .add({'name': name, 'price': price, 'date': date});
+          .add({
+        'name': name,
+        'price': price,
+        'date': date,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
     } catch (e) {
       print(e.toString());
     }
+  }
+
+  Stream<QuerySnapshot> getTransactions(String userId) {
+    return firestore
+        .collection('transactions')
+        .doc(userId)
+        .collection('transactions')
+        .orderBy('createdAt', descending: true)
+        .snapshots();
   }
 }

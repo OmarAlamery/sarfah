@@ -5,8 +5,15 @@ import '../../../core/theming/fonts.dart';
 import '../../../core/theming/my_colors.dart';
 
 class ExpenseTileWidget extends StatelessWidget {
+  final String name;
+  final String date;
+  final String price;
+
   const ExpenseTileWidget({
     super.key,
+    required this.name,
+    required this.date,
+    required this.price,
   });
 
   @override
@@ -29,12 +36,12 @@ class ExpenseTileWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Electricity",
+                      name,
                       style: FontHelper.font18BoldWhite,
                     ),
                     verticalSpace(10),
                     Text(
-                      "2 Feb, 2025",
+                      date,
                       style: FontHelper.font13WhiteW300,
                     ),
                   ],
@@ -42,7 +49,7 @@ class ExpenseTileWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 40.0),
                   child: Text(
-                    "-2000 YR",
+                    "$price YR",
                     style: FontHelper.font18BoldWhite,
                   ),
                 ),
@@ -50,20 +57,20 @@ class ExpenseTileWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-              top: 0,
-              bottom: 0,
-              right: 0,
-              child: Container(
-                height: double.infinity,
-                width: 20,
-                decoration: BoxDecoration(
-                  color: MyColors.orangeColor,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(16),
-                    bottomRight: Radius.circular(16),
-                  ),
+            right: 0,
+            top: 0,
+            bottom: 0,
+            child: Container(
+              width: 30,
+              decoration: BoxDecoration(
+                color: MyColors.orangeColor,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(16),
+                  bottomRight: Radius.circular(16),
                 ),
-              ))
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theming/fonts.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({
-    super.key,
-  });
+  const MyAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +11,12 @@ class MyAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
           icon: Icon(
             Icons.menu,
             color: Colors.white,
-            size: 30,
           ),
         ),
         Text(
@@ -27,9 +26,8 @@ class MyAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: Icon(
-            Icons.notifications,
+            Icons.notifications_outlined,
             color: Colors.white,
-            size: 30,
           ),
         ),
       ],
