@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarfah/core/routing/routs.dart';
 import 'package:sarfah/core/theming/fonts.dart';
 
 class DontHaveAnAccount extends StatelessWidget {
@@ -14,7 +15,9 @@ class DontHaveAnAccount extends StatelessWidget {
         Text("Don't have an account?", style: FontHelper.font13WhiteW300),
         TextButton(
           child: Text("Sign Up"),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.signup);
+          },
         )
       ],
     );
