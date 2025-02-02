@@ -2,23 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sarfah/core/networking/firebase_helper.dart';
 
-part 'login_state.dart';
+part 'signup_state.dart';
 
-class LoginCubit extends Cubit<LoginState> {
+class SignupCubit extends Cubit<SignupState> {
   final FirebaseHelper firebaseHelper;
-  LoginCubit(this.firebaseHelper) : super(LoginInitial());
+  SignupCubit(this.firebaseHelper) : super(SignupInitial());
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordConfirmationController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  login() async {
-    emit(LoginLoadingState());
+  signUp() async {
+    emit(SignupLoadingState());
     try {
       await firebaseHelper
-          .loginUser(
+          .registerUser(
               emailController.text.trim(), passwordController.text.trim())
-          .then((value) => emit(LoginSuccessState()));
+          .then((value) => emit(SignupSuccessState()));
     } catch (e) {
-      emit(LoginErrorState());
+      emit(SignupErrorState());
     }
   }
 }

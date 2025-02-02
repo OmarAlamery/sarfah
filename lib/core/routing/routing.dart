@@ -5,6 +5,8 @@ import 'package:sarfah/core/routing/routs.dart';
 import 'package:sarfah/features/home/home_screen.dart';
 import 'package:sarfah/features/login/logic/cubit/login_cubit.dart';
 import 'package:sarfah/features/login/ui/screens/login_screen.dart';
+import 'package:sarfah/features/signup/logic/cubit/signup_cubit.dart';
+import 'package:sarfah/features/signup/ui/screens/signup_screen.dart';
 
 class Routing {
   Route generateRoute(RouteSettings settings) {
@@ -20,6 +22,12 @@ class Routing {
             builder: (context) => BlocProvider(
                   create: (context) => LoginCubit(FirebaseHelper()),
                   child: const HomeScreen(),
+                ));
+      case Routes.signup:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => SignupCubit(FirebaseHelper()),
+                  child: const SignupScreen(),
                 ));
       default:
         return MaterialPageRoute(builder: (context) => const NoRouteScreen());

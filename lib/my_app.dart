@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarfah/core/routing/routing.dart';
-import 'package:sarfah/core/routing/routs.dart';
+import 'package:sarfah/home_or_login.dart';
 
 class MyApp extends StatelessWidget {
   final Routing routing;
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        initialRoute: Routes.login,
+        home: HomeOrLogin(),
         onGenerateRoute: routing.generateRoute,
       ),
     );
